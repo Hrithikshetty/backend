@@ -6,23 +6,25 @@ function App() {
   const [jokes, setJokes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/jokes")
+    axios.get("/api/jokes")
       .then((response) => {
         setJokes(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []); // Adding an empty dependency array to run the effect only once
+  } ); // Adding an empty dependency array to run the effect only once
 
   return (
     <>
       <h1>hello</h1>
       <p>JOKES: {jokes.length}</p>
       {jokes.map((joke, index) => (
+        
         <div key={joke.id}>
-          <h3>{joke.title}</h3>
-          <p>{joke.content}</p>
+          <h3>{joke.part1}</h3>
+          <h3>{joke.part2}</h3>
+        
         </div>
       ))}
     </>
