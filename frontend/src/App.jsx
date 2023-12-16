@@ -22,9 +22,10 @@ function App() {
       {jokes.map((joke, index) => (
         
         <div key={joke.id}>
-          <h3>{joke.part1}</h3>
-          <h3>{joke.part2}</h3>
-        
+          <h3>{joke.id}</h3>
+          <h4>{joke.part1}</h4>
+          <h4>{joke.part2}</h4>
+        <br/>
         </div>
       ))}
     </>
